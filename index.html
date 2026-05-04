@@ -1,1139 +1,436 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-  rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --primary: #F47C20;
-    --primary-glow: rgba(244, 124, 32, 0.2);
-    --bg-dark: #080808;
-    --bg-card: #141414;
-    --border-card: rgba(255, 255, 255, 0.08);
-    --text-main: #FFFFFF;
-    --text-dim: #BBBBB5;
-    --text-muted: #666666;
-    --section-pad: clamp(80px, 12vw, 140px);
-  }
+    /* RESET DE FORÇA BRUTA PARA GREAT PAGES */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
 
-  @font-face {
-    font-family: 'iBrand';
-    src: url('fonts/iBrand.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+    #f5-master-lp {
+        background-color: #000000 !important;
+        color: #ffffff !important;
+        font-family: 'Inter', sans-serif !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        text-align: left !important;
+    }
 
-  body,
-  html {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: var(--bg-dark) !important;
-    width: 100% !important;
-    overflow-x: hidden !important;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-main);
-  }
+    #f5-master-lp div, #f5-master-lp section, #f5-master-lp h1, #f5-master-lp h2, #f5-master-lp h3, #f5-master-lp p, #f5-master-lp span {
+        box-sizing: border-box !important;
+    }
 
-  * {
-    box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    /* --- DOBRA 01: HERO --- */
+    .f5-hero {
+        padding: 120px 20px !important;
+        text-align: left !important;
+        background: url('https://github.com/f5estrategia/TreinamentoDeVendas/blob/main/fundo.png?raw=true') center center / cover no-repeat !important;
+        border-bottom: 1px solid #222 !important;
+        min-height: 80vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
 
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-  }
+    .f5-hero-inner {
+        max-width: 1140px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
 
-  p {
-    margin: 0;
-    line-height: 1.7;
-  }
+    .f5-hero-content {
+        max-width: 650px !important;
+        width: 100% !important;
+    }
 
-  .glass-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    border-radius: 24px;
-    padding: 40px;
-  }
+    .f5-hero h1 {
+        color: #ffffff !important;
+        font-size: clamp(38px, 5vw, 65px) !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        margin: 0 0 25px 0 !important;
+        line-height: 1.1 !important;
+    }
 
-  .glass-card:hover {
-    border-color: rgba(244, 124, 32, 0.4);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  }
+    .f5-hero h1 span { color: #FF4D00 !important; }
 
-  .icon-solid {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--primary-glow);
-    border-radius: 12px;
-    color: var(--primary);
-    margin-bottom: 24px;
-  }
+    .f5-hero p {
+        color: #A0A0A0 !important;
+        font-size: clamp(18px, 2vw, 22px) !important;
+        margin: 0 0 40px 0 !important;
+        line-height: 1.5 !important;
+    }
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--primary);
-    color: #fff;
-    font-family: 'iBrand', sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    padding: 24px 56px;
-    border-radius: 16px;
-    text-decoration: none;
-    box-shadow: 0 10px 40px rgba(244, 124, 32, 0.3);
-  }
+    /* --- BOTÕES --- */
+    .f5-btn-main {
+        background-color: #FF4D00 !important;
+        color: #ffffff !important;
+        padding: 22px 55px !important;
+        border-radius: 60px !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+        font-size: 18px !important;
+        box-shadow: 0 10px 40px rgba(255, 77, 0, 0.4) !important;
+        transition: 0.3s !important;
+    }
 
-  .btn-primary:hover {
-    transform: scale(1.02) translateY(-2px);
-    box-shadow: 0 15px 50px rgba(244, 124, 32, 0.5);
-  }
+    /* --- ESTRUTURA DE MÓDULOS --- */
+    .f5-section {
+        max-width: 1140px !important;
+        margin: 0 auto !important;
+        padding: 100px 20px !important;
+    }
+
+    .f5-block-head {
+        border-left: 6px solid #FF4D00 !important;
+        padding-left: 20px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .f5-block-head span { color: #FF4D00 !important; font-weight: 700 !important; text-transform: uppercase !important; font-size: 14px !important; letter-spacing: 2px !important; display: block !important; }
+    .f5-block-head h2 { color: #ffffff !important; font-size: clamp(30px, 4vw, 45px) !important; font-weight: 900 !important; text-transform: uppercase !important; margin: 5px 0 0 !important; }
+
+    .f5-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 25px !important;
+    }
+
+    .f5-card {
+        background-color: #111111 !important;
+        border: 1px solid #222222 !important;
+        padding: 40px !important;
+        border-radius: 15px !important;
+        flex: 1 1 320px !important;
+        position: relative !important;
+        min-height: 280px !important;
+    }
+
+    .f5-card i { color: #FF4D00 !important; font-size: 35px !important; margin-bottom: 25px !important; display: block !important; }
+    .f5-card h3 { color: #FF4D00 !important; font-size: 22px !important; margin: 0 0 15px 0 !important; font-weight: 700 !important; }
+    .f5-card p { color: #A0A0A0 !important; font-size: 16px !important; line-height: 1.6 !important; margin: 0 !important; }
+
+    .f5-ia-badge {
+        background-color: #0047FF !important;
+        color: #ffffff !important;
+        font-size: 10px !important;
+        font-weight: 900 !important;
+        padding: 5px 12px !important;
+        border-radius: 4px !important;
+        position: absolute !important;
+        top: 30px !important;
+        right: 30px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* --- CAIXAS ESPECIAIS --- */
+    .f5-insight-box {
+        border: 1px solid #FF4D00 !important;
+        padding: 40px !important;
+        border-radius: 15px !important;
+        margin-top: 40px !important;
+        background: rgba(255, 77, 0, 0.05) !important;
+    }
+    .f5-insight-box h4 { color: #FF4D00 !important; text-transform: uppercase !important; margin: 0 0 15px 0 !important; font-size: 24px !important; font-weight: 900 !important; }
+
+    .f5-gestao-flex { display: flex !important; flex-wrap: wrap !important; gap: 30px !important; }
+    .f5-kpi-panel {
+        flex: 1 1 380px !important;
+        border: 1.5px solid #FF4D00 !important;
+        padding: 60px 40px !important;
+        border-radius: 15px !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    .f5-kpi-panel .big-num { font-size: 100px !important; font-weight: 900 !important; color: #FF4D00 !important; line-height: 1 !important; margin: 0 !important; }
+    .f5-kpi-panel p { color: #ffffff !important; font-size: 18px !important; margin: 15px 0 45px 0 !important; }
+
+    .f5-bonus-bar {
+        background: #111 !important;
+        border: 1px solid #FF4D00 !important;
+        padding: 35px 45px !important;
+        border-radius: 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 30px !important;
+        margin-top: 50px !important;
+    }
+    .f5-bonus-bar i { color: #FF4D00 !important; font-size: 45px !important; }
+
+    /* --- FOOTER CTA --- */
+    .f5-footer-cta { text-align: center !important; padding: 120px 20px !important; border-top: 1px solid #222 !important; background: #050505 !important; }
+
+    /* --- EFEITOS ESPECIAIS HERO --- */
+    .f5-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #FF4D00;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: floatParticle linear infinite;
+        z-index: 1;
+        opacity: 0;
+        box-shadow: 0 0 10px #FF4D00;
+    }
+    @keyframes floatParticle {
+        0% { transform: translateY(0) scale(0.5); opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { transform: translateY(-150px) scale(1.5); opacity: 0; }
+    }
+
+    .f5-word-anim .w {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: wordFadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    @keyframes wordFadeUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .f5-word-anim .w:nth-child(1) { animation-delay: 0.1s; }
+    .f5-word-anim .w:nth-child(2) { animation-delay: 0.2s; }
+    .f5-word-anim .w:nth-child(3) { animation-delay: 0.3s; }
+    .f5-word-anim .w:nth-child(4) { animation-delay: 0.4s; }
+    .f5-word-anim > span .w:nth-child(1) { animation-delay: 0.5s; }
+    .f5-word-anim > span .w:nth-child(2) { animation-delay: 0.6s; }
+    .f5-word-anim > span .w:nth-child(3) { animation-delay: 0.7s; }
+    .f5-word-anim > span .w:nth-child(4) { animation-delay: 0.8s; }
+
+    /* --- ANIMAÇÕES FLUIDAS --- */
+    .f5-reveal {
+        opacity: 0 !important;
+        transform: translateY(30px) !important;
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out !important;
+    }
+    .f5-reveal.f5-active {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    .f5-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .f5-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 15px 30px rgba(255, 77, 0, 0.15) !important;
+        border-color: #FF4D00 !important;
+    }
+
+    /* RESPONSIVIDADE MOBILE */
+    @media (max-width: 768px) {
+        .f5-bonus-bar { flex-direction: column !important; text-align: center !important; }
+        .f5-kpi-panel .big-num { font-size: 70px !important; }
+    }
 </style>
 
-<div
-  style="position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(8,8,8,0.95);border-bottom:1px solid #222;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;box-sizing:border-box;">
-  <div style="font-family:'iBrand',sans-serif;font-weight:900;font-size:22px;color:#F47C20;letter-spacing:-0.5px;">f5
-    <span
-      style="font-family:'Poppins',sans-serif;font-weight:400;font-size:12px;color:#666;margin-left:6px;letter-spacing:.06em;text-transform:uppercase;">Estratégia</span>
-  </div>
-  <a href="#form"
-    style="background:#F47C20;color:#fff;font-family:'iBrand',sans-serif;font-weight:700;font-size:12px;padding:10px 22px;border-radius:6px;text-decoration:none;letter-spacing:.04em;">Fazer
-    diagnóstico grátis →</a>
-</div>
+<div id="f5-master-lp">
 
-<div
-  style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:160px 24px 100px;position:relative;overflow:hidden;box-sizing:border-box;background-image:url('https://raw.githubusercontent.com/f5estrategia/TreinamentoDeVendas/main/fundo.png');background-size:cover;background-position:center top;background-repeat:no-repeat;">
-
-  <div style="max-width:1300px;width:100%;text-align:left;position:relative;z-index:1;padding-left:4vw;">
-    <div
-      style="display:inline-flex;align-items:center;gap:10px;background:rgba(244,124,32,0.15);border:1px solid rgba(244,124,32,0.4);color:#F47C20;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 24px;border-radius:100px;margin-bottom:40px;backdrop-filter:blur(8px);">
-      <span
-        style="width:8px;height:8px;border-radius:50%;background:#F47C20;display:inline-block;box-shadow:0 0 10px #F47C20;"></span>
-      Diagnóstico gratuito · 6 perguntas · resultado imediato
-    </div>
-    <h1
-      style="font-family:'iBrand',sans-serif;font-weight:900;font-size:clamp(36px,7vw,84px);line-height:1.15;letter-spacing:-0.5px;color:#fff;margin:0 0 28px;text-shadow:0 4px 30px rgba(0,0,0,0.8);max-width:850px;">
-      Por que sua empresa trava no <span style="color:#F47C20;">mesmo faturamento</span>?
-    </h1>
-    <p
-      style="font-family:'Poppins',sans-serif;font-size:clamp(18px,2.5vw,24px);color:#E0E0E0;line-height:1.6;max-width:640px;margin:0 0 48px;text-shadow:0 2px 10px rgba(0,0,0,0.5);">
-      Responda 6 perguntas e descubra exatamente qual é o gargalo que está impedindo seu negócio de crescer — com 3
-      ações prioritárias para resolver agora.
-    </p>
-    <div style="display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap;margin-bottom:56px;">
-      <div
-        style="display:flex;align-items:center;gap:10px;background:rgba(20,20,20,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:12px 24px;font-family:'Poppins',sans-serif;font-size:15px;color:#FFFFFF;backdrop-filter:blur(10px);">
-        <span
-          style="width:22px;height:22px;border-radius:50%;background:#F47C20;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:800;flex-shrink:0;">✓</span>
-        Resultado personalizado
-      </div>
-      <div
-        style="display:flex;align-items:center;gap:10px;background:rgba(20,20,20,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:12px 24px;font-family:'Poppins',sans-serif;font-size:15px;color:#FFFFFF;backdrop-filter:blur(10px);">
-        <span
-          style="width:22px;height:22px;border-radius:50%;background:#F47C20;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:800;flex-shrink:0;">✓</span>
-        100% gratuito
-      </div>
-      <div
-        style="display:flex;align-items:center;gap:10px;background:rgba(20,20,20,0.9);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:12px 24px;font-family:'Poppins',sans-serif;font-size:15px;color:#FFFFFF;backdrop-filter:blur(10px);">
-        <span
-          style="width:22px;height:22px;border-radius:50%;background:#F47C20;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:800;flex-shrink:0;">✓</span>
-        Menos de 3 minutos
-      </div>
-    </div>
-    <a href="#form" class="btn-primary">
-      Descobrir meu gargalo agora
-      <span style="font-size:24px;line-height:1;">→</span>
-    </a>
-    <p style="margin-top:24px;font-family:'Poppins',sans-serif;font-size:14px;color:#AAAAAA;font-weight:500;">+3.000
-      empresários já fizeram esse diagnóstico</p>
-  </div>
-</div>
-
-
-<div style="background:#0F0F0F;padding:var(--section-pad) 24px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
-      <span style="width:32px;height:3px;background:#F47C20;display:inline-block;border-radius:2px;"></span>
-      <span
-        style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#F47C20;letter-spacing:.15em;text-transform:uppercase;">O
-        que você vai descobrir</span>
-    </div>
-    <h2
-      style="font-family:'iBrand',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.2;letter-spacing:-0.5px;color:#fff;margin:0 0 24px;max-width:800px;">
-      6 perguntas. Um diagnóstico <span style="color:#F47C20;">cirúrgico</span> do seu gargalo.</h2>
-    <p
-      style="font-family:'Poppins',sans-serif;font-size:clamp(17px,2vw,21px);color:var(--text-dim);line-height:1.6;max-width:700px;margin:0 0 72px;">
-      Cada resposta mapeia onde seu negócio está travando — e o resultado entrega o diagnóstico com as ações específicas
-      para o seu caso.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px;">
-      <div class="glass-card" style="border-top:4px solid #F47C20;">
-        <div class="icon-solid">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path
-              d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-          </svg>
-        </div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">De onde
-          vêm seus clientes</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Identificar se você depende de indicação passiva ou tem um sistema ativo de aquisição funcionando.</p>
-      </div>
-
-      <div class="glass-card" style="border-top:4px solid #F47C20;">
-        <div class="icon-solid">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path
-              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
-          </svg>
-        </div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">Como você
-          decide em marketing</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Descobrir se você investe com base em dado ou em intuição — e o que isso custa na prática.</p>
-      </div>
-
-      <div class="glass-card" style="border-top:4px solid #F47C20;">
-        <div class="icon-solid">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" />
-          </svg>
-        </div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">O que
-          acontece quando você para</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Mapear o nível de dependência do dono e o que precisa mudar para a empresa operar sem você no centro.</p>
-      </div>
-
-      <div class="glass-card" style="border-top:4px solid #F47C20;">
-        <div class="icon-solid">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path
-              d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 1.9 1.55 3.28 3.58 3.75V21h3v-2.15c2.03-.35 3.6-1.55 3.6-3.66 0-2.37-1.94-3.48-4.7-4.29z" />
-          </svg>
-        </div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">Por que o
-          dinheiro não sobra</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Entender se o problema está no cliente que você atrai, no preço ou no posicionamento que comunica.</p>
-      </div>
-
-      <div class="glass-card" style="border-top:4px solid #F47C20;">
-        <div class="icon-solid">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path
-              d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z" />
-          </svg>
-        </div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">Seu time
-          tem o que precisa</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Verificar se o problema de resultado está no vendedor ou na ausência de demanda qualificada chegando.</p>
-      </div>
-
-      <div class="glass-card" style="border-top:4px solid #F47C20;">
-        <div class="icon-solid">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-            <path
-              d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
-          </svg>
-        </div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">Em qual
-          fase você está</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Identificar se sua empresa está na Fase A, B ou C — e o que é necessário para avançar.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="background:var(--bg-dark);padding:0 24px 80px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div
-      style="background:linear-gradient(135deg,#1A1208,#1E1208);border:1px solid rgba(244,124,32,0.3);border-top:4px solid #F47C20;border-radius:24px;padding:60px 80px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;box-sizing:border-box;box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-      <div style="flex:1 1 400px;min-width:0;">
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;">
-          Diagnóstico gratuito</p>
-        <p
-          style="font-family:'iBrand',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;line-height:1.2;margin:0;">
-          Você sabe onde seu negócio está travando <span style="color:#F47C20;">agora?</span></p>
-      </div>
-      <a href="#form" class="btn-primary" style="flex:0 0 auto;min-width:320px;justify-content:center;">Fazer
-        diagnóstico grátis →</a>
-    </div>
-  </div>
-</div>
-
-<div style="background:var(--bg-dark);padding:var(--section-pad) 24px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
-      <span style="width:32px;height:3px;background:#F47C20;display:inline-block;border-radius:2px;"></span>
-      <span
-        style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#F47C20;letter-spacing:.15em;text-transform:uppercase;">O
-        que você recebe</span>
-    </div>
-    <h2
-      style="font-family:'iBrand',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.2;letter-spacing:-0.5px;color:#fff;margin:0 0 24px;max-width:800px;">
-      Não é um resultado genérico.<br>É o <span style="color:#F47C20;">seu diagnóstico</span>.</h2>
-    <p
-      style="font-family:'Poppins',sans-serif;font-size:clamp(17px,2vw,21px);color:var(--text-dim);line-height:1.6;max-width:700px;margin:0 0 72px;">
-      Com base nas suas respostas, o sistema identifica o gargalo principal e entrega um plano específico para o seu
-      momento.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:32px;">
-      <div class="glass-card" style="display:flex;gap:24px;">
-        <div
-          style="min-width:56px;height:56px;border-radius:16px;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#fff;flex-shrink:0;box-shadow: 0 10px 20px rgba(244,124,32,0.2);">
-          1</div>
-        <div>
-          <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">
-            Diagnóstico personalizado</h3>
-          <p style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);line-height:1.65;margin:0;">O
-            sistema nomeia com precisão onde está o travamento — dependência de indicação, posicionamento fraco, time
-            sem processo, dono preso na operação.</p>
-        </div>
-      </div>
-
-      <div class="glass-card" style="display:flex;gap:24px;">
-        <div
-          style="min-width:56px;height:56px;border-radius:16px;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#fff;flex-shrink:0;box-shadow: 0 10px 20px rgba(244,124,32,0.2);">
-          2</div>
-        <div>
-          <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">3 ações
-            prioritárias</h3>
-          <p style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);line-height:1.65;margin:0;">
-            Ações concretas aplicáveis na semana seguinte. Não framework abstrato — o que você precisa fazer primeiro
-            para destravar.</p>
-        </div>
-      </div>
-
-      <div class="glass-card" style="display:flex;gap:24px;">
-        <div
-          style="min-width:56px;height:56px;border-radius:16px;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#fff;flex-shrink:0;box-shadow: 0 10px 20px rgba(244,124,32,0.2);">
-          3</div>
-        <div>
-          <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">Clareza
-            estratégica</h3>
-          <p style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);line-height:1.65;margin:0;">
-            Saber se está na Fase A, B ou C — e o que muda de estratégia para avançar sem gastar energia no lugar
-            errado.</p>
-        </div>
-      </div>
-
-      <div class="glass-card" style="display:flex;gap:24px;">
-        <div
-          style="min-width:56px;height:56px;border-radius:16px;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#fff;flex-shrink:0;box-shadow: 0 10px 20px rgba(244,124,32,0.2);">
-          4</div>
-        <div>
-          <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 12px;">Mapa de
-            próximo passo</h3>
-          <p style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);line-height:1.65;margin:0;">Se
-            o diagnóstico indicar que a f5 pode ajudar, você recebe um convite para uma sessão estratégica gratuita.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="background:var(--bg-dark);padding:0 24px 80px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div
-      style="background:linear-gradient(135deg,#1A1208,#1E1208);border:1px solid rgba(244,124,32,0.3);border-top:4px solid #F47C20;border-radius:24px;padding:60px 80px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;box-sizing:border-box;box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-      <div style="flex:1 1 400px;min-width:0;">
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;">
-          Diagnóstico gratuito</p>
-        <p
-          style="font-family:'iBrand',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;line-height:1.2;margin:0;">
-          Seu gargalo já está aqui. Falta só <span style="color:#F47C20;">descobrir qual é.</span></p>
-      </div>
-      <a href="#form" class="btn-primary" style="flex:0 0 auto;min-width:320px;justify-content:center;">Quero meu
-        diagnóstico →</a>
-    </div>
-  </div>
-</div>
-
-<div style="background:#0F0F0F;padding:var(--section-pad) 24px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;text-align:center;">
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px;">
-      <span
-        style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#F47C20;letter-spacing:.15em;text-transform:uppercase;">Como
-        funciona</span>
-    </div>
-    <h2
-      style="font-family:'iBrand',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.2;letter-spacing:-0.5px;color:#fff;margin:0 0 80px;">
-      3 passos. Menos de 3 minutos.</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;">
-      <div style="text-align:center;">
-        <div
-          style="width:72px;height:72px;border-radius:50%;background:#181818;border:3px solid #F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:28px;color:#F47C20;margin:0 auto 32px;box-shadow: 0 0 30px rgba(244,124,32,0.2);">
-          1</div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 16px;">Responda
-          6 perguntas</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Perguntas diretas sobre como sua empresa funciona hoje. Sem jargão, sem enrolação.</p>
-      </div>
-      <div style="text-align:center;">
-        <div
-          style="width:72px;height:72px;border-radius:50%;background:#181818;border:3px solid #F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:28px;color:#F47C20;margin:0 auto 32px;box-shadow: 0 0 30px rgba(244,124,32,0.2);">
-          2</div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 16px;">Preencha
-          seus dados</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">Nome
-          e e-mail para receber o resultado. WhatsApp opcional — só se quiser contato direto.</p>
-      </div>
-      <div style="text-align:center;">
-        <div
-          style="width:72px;height:72px;border-radius:50%;background:#181818;border:3px solid #F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:28px;color:#F47C20;margin:0 auto 32px;box-shadow: 0 0 30px rgba(244,124,32,0.2);">
-          3</div>
-        <h3 style="font-family:'iBrand',sans-serif;font-weight:700;font-size:22px;color:#fff;margin:0 0 16px;">Receba
-          seu diagnóstico</h3>
-        <p style="font-family:'Poppins',sans-serif;font-size:16px;color:var(--text-dim);line-height:1.6;margin:0;">
-          Resultado imediato com o gargalo principal e as 3 ações prioritárias para o seu caso.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="background:var(--bg-dark);padding:0 24px 80px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div
-      style="background:linear-gradient(135deg,#1A1208,#1E1208);border:1px solid rgba(244,124,32,0.3);border-top:4px solid #F47C20;border-radius:24px;padding:60px 80px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;box-sizing:border-box;box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-      <div style="flex:1 1 400px;min-width:0;">
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;">
-          Diagnóstico gratuito</p>
-        <p
-          style="font-family:'iBrand',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;line-height:1.2;margin:0;">
-          6 perguntas. 3 minutos. O diagnóstico que pode <span style="color:#F47C20;">mudar seu próximo mês.</span></p>
-      </div>
-      <a href="#form" class="btn-primary" style="flex:0 0 auto;min-width:320px;justify-content:center;">Fazer
-        diagnóstico grátis →</a>
-    </div>
-  </div>
-</div>
-
-<div style="background:var(--bg-dark);padding:var(--section-pad) 24px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:80px;">
-      <p
-        style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#F47C20;letter-spacing:.15em;text-transform:uppercase;margin:0 0 16px;">
-        Você quer promessas ou quer provas?</p>
-      <h2
-        style="font-family:'iBrand',sans-serif;font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.2;letter-spacing:-0.5px;color:#fff;margin:0 0 24px;">
-        Veja o que aconteceu com quem <span style="color:#F47C20;">agiu</span>.</h2>
-      <p
-        style="font-family:'Poppins',sans-serif;font-size:clamp(17px,2vw,21px);color:var(--text-dim);line-height:1.6;max-width:700px;margin:0 auto;">
-        Números reais de empresas que passaram pelo diagnóstico e decidiram estruturar o crescimento com a f5.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:32px;">
-      <div class="glass-card">
-        <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
-          <div
-            style="width:56px;height:56px;border-radius:50%;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:18px;color:#fff;flex-shrink:0;">
-            RS</div>
-          <div>
-            <div style="font-family:'iBrand',sans-serif;font-weight:700;font-size:18px;color:#fff;">Ricardo Santos</div>
-            <div style="font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-muted);">CEO · Serviços B2B
+    <section class="f5-hero">
+        <div class="f5-hero-inner">
+            <div class="f5-hero-content f5-reveal">
+                <img src="https://github.com/f5estrategia/TreinamentoDeVendas/blob/main/Logo%20f5.png?raw=true" alt="Logo F5" style="max-width: 180px !important; margin-bottom: 40px !important; display: block !important;">
+                <div style="color: #FF4D00 !important; letter-spacing: 4px; font-weight: 700; font-size: 14px; margin-bottom: 20px !important;">ACELERADORA DIGITAL F5</div>
+                <h1 class="f5-word-anim">
+                    <span class="w">Aumente</span> <span class="w">sua</span> <span class="w">taxa</span> <span class="w">de</span><br>
+                    <span><span class="w">conversão</span> <span class="w">em</span> <span class="w">até</span> <span class="w">42%</span></span>
+                </h1>
+                <p>Implemente o processo comercial completo de 13 módulos que transformou operações estagnadas em máquinas de receita previsível.</p>
+                <a href="#leads" class="f5-btn-main">Quero meu diagnóstico gratuito</a>
             </div>
-          </div>
         </div>
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:17px;color:var(--text-dim);line-height:1.7;font-style:italic;margin:0 0 32px;">
-          <span
-            style="color:#F47C20;font-size:32px;font-style:normal;line-height:0;vertical-align:-12px;margin-right:4px;">"</span>O
-          diagnóstico nomeou exatamente o problema que eu sentia mas não conseguia articular. Em 90 dias estruturamos o
-          primeiro canal e o faturamento saiu do platô.
-        </p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <div
-            style="background:rgba(244,124,32,0.08);border:1px solid rgba(244,124,32,0.15);border-radius:12px;padding:12px 20px;flex:1;">
-            <span
-              style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;">+47%</span><span
-              style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Faturamento</span>
-          </div>
-          <div
-            style="background:rgba(244,124,32,0.08);border:1px solid rgba(244,124,32,0.15);border-radius:12px;padding:12px 20px;flex:1;">
-            <span
-              style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;">3x</span><span
-              style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Leads</span>
-          </div>
-        </div>
-      </div>
+    </section>
 
-      <div class="glass-card">
-        <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
-          <div
-            style="width:56px;height:56px;border-radius:50%;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:18px;color:#fff;flex-shrink:0;">
-            AF</div>
-          <div>
-            <div style="font-family:'iBrand',sans-serif;font-weight:700;font-size:18px;color:#fff;">Ana Ferreira</div>
-            <div style="font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-muted);">Sócia · Distribuidora
+    <section class="f5-section">
+        <div class="f5-block-head f5-reveal">
+            <span>Bloco 01</span>
+            <h2>Fundação: O DNA do Vendedor</h2>
+        </div>
+        <div class="f5-grid f5-reveal">
+            <div class="f5-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>M1 · Mentalidade</h3>
+                <p>Sair do "vendedor tirador de pedido" para o "aliado estratégico". Foco em resiliência cognitiva e antifragilidade comercial.</p>
             </div>
-          </div>
-        </div>
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:17px;color:var(--text-dim);line-height:1.7;font-style:italic;margin:0 0 32px;">
-          <span
-            style="color:#F47C20;font-size:32px;font-style:normal;line-height:0;vertical-align:-12px;margin-right:4px;">"</span>Descobri
-          que meu problema não era falta de cliente — era cliente errado. Mudamos o posicionamento e a margem aumentou
-          mesmo com menos volume.
-        </p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <div
-            style="background:rgba(244,124,32,0.08);border:1px solid rgba(244,124,32,0.15);border-radius:12px;padding:12px 20px;flex:1;">
-            <span
-              style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;">+31%</span><span
-              style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Margem</span>
-          </div>
-          <div
-            style="background:rgba(244,124,32,0.08);border:1px solid rgba(244,124,32,0.15);border-radius:12px;padding:12px 20px;flex:1;">
-            <span
-              style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;">-60%</span><span
-              style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Churn</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass-card">
-        <div style="display:flex;align-items:center;gap:16px;margin-bottom:32px;">
-          <div
-            style="width:56px;height:56px;border-radius:50%;background:#F47C20;display:flex;align-items:center;justify-content:center;font-family:'iBrand',sans-serif;font-weight:900;font-size:18px;color:#fff;flex-shrink:0;">
-            MO</div>
-          <div>
-            <div style="font-family:'iBrand',sans-serif;font-weight:700;font-size:18px;color:#fff;">Marcos Oliveira
+            <div class="f5-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>M2 · Fundamentos</h3>
+                <p>Domínio do funil Y e tipos de venda (Transacional vs. Complexa). A ciência por trás da jornada de compra moderna.</p>
             </div>
-            <div style="font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-muted);">Fundador · Consultoria
+            <div class="f5-card">
+                <i class="fa-solid fa-comments"></i>
+                <h3>M3 · Comunicação</h3>
+                <p>Storytelling aplicado a negócios e escuta ativa de diagnóstico. Como usar a linguagem corporal em reuniões de vídeo.</p>
             </div>
-          </div>
         </div>
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:17px;color:var(--text-dim);line-height:1.7;font-style:italic;margin:0 0 32px;">
-          <span
-            style="color:#F47C20;font-size:32px;font-style:normal;line-height:0;vertical-align:-12px;margin-right:4px;">"</span>Faturava
-          600K por mês e não conseguia tirar férias. O diagnóstico mostrou que eu era o gargalo. Hoje o time opera e eu
-          só entro nas decisões.
-        </p>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <div
-            style="background:rgba(244,124,32,0.08);border:1px solid rgba(244,124,32,0.15);border-radius:12px;padding:12px 20px;flex:1;">
-            <span
-              style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;">R$1,1M</span><span
-              style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Faturamento/mês</span>
-          </div>
-          <div
-            style="background:rgba(244,124,32,0.08);border:1px solid rgba(244,124,32,0.15);border-radius:12px;padding:12px 20px;flex:1;">
-            <span style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;">2
-              sem</span><span
-              style="font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;">Férias
-              Reais</span>
-          </div>
+        <div class="f5-insight-box f5-reveal">
+            <h4>O Insight F5</h4>
+            <p style="font-weight: 700 !important; font-style: italic !important; font-size: 18px !important; color: #ffffff !important; margin: 0 !important;">"Vendas não é sobre falar, é sobre controlar a narrativa através das perguntas que ninguém mais tem coragem de fazer."</p>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<div style="background:var(--bg-dark);padding:0 24px 80px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div
-      style="background:linear-gradient(135deg,#1A1208,#1E1208);border:1px solid rgba(244,124,32,0.3);border-top:4px solid #F47C20;border-radius:24px;padding:60px 80px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;box-sizing:border-box;box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-      <div style="flex:1 1 400px;min-width:0;">
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;">
-          Diagnóstico gratuito</p>
-        <p
-          style="font-family:'iBrand',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;line-height:1.2;margin:0;">
-          Você está no próximo case — ou vai continuar no <span style="color:#F47C20;">mesmo faturamento?</span></p>
-      </div>
-      <a href="#form" class="btn-primary" style="flex:0 0 auto;min-width:320px;justify-content:center;">Descobrir meu
-        gargalo →</a>
-    </div>
-  </div>
-</div>
-
-<div style="background:#0F0F0F;padding:var(--section-pad) 24px;box-sizing:border-box;">
-  <div
-    style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:80px;align-items:center;">
-    <div>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
-        <span style="width:32px;height:3px;background:#F47C20;display:inline-block;border-radius:2px;"></span>
-        <span
-          style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:#F47C20;letter-spacing:.15em;text-transform:uppercase;">Quem
-          somos</span>
-      </div>
-      <h2
-        style="font-family:'iBrand',sans-serif;font-weight:800;font-size:clamp(28px,4vw,48px);line-height:1.2;letter-spacing:-0.5px;color:#fff;margin:0 0 24px;">
-        A f5 é uma <span style="color:#F47C20;">aceleradora digital</span> focada em escala.</h2>
-      <p style="font-family:'Poppins',sans-serif;font-size:18px;color:var(--text-dim);line-height:1.7;margin:0 0 40px;">
-        Especializada em tráfego pago de alta performance e inteligência de dados para empresas que buscam crescimento
-        previsível.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-        <div class="glass-card" style="padding:24px;"><span
-            style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:32px;color:#F47C20;line-height:1;margin-bottom:8px;">+300</span><span
-            style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:600;">Empresas</span>
+    <section class="f5-section" style="padding-top: 0 !important;">
+        <div class="f5-block-head f5-reveal">
+            <span>Bloco 02</span>
+            <h2>Processo: A Engrenagem Operacional</h2>
         </div>
-        <div class="glass-card" style="padding:24px;"><span
-            style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:32px;color:#F47C20;line-height:1;margin-bottom:8px;">27x</span><span
-            style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:600;">ROAS
-            Médio</span></div>
-        <div class="glass-card" style="padding:24px;"><span
-            style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:32px;color:#F47C20;line-height:1;margin-bottom:8px;">8</span><span
-            style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:600;">Anos de
-            Mercado</span></div>
-        <div class="glass-card" style="padding:24px;"><span
-            style="display:block;font-family:'iBrand',sans-serif;font-weight:900;font-size:32px;color:#F47C20;line-height:1;margin-bottom:8px;">R$1M+</span><span
-            style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:600;">Em
-            Receita</span></div>
-      </div>
-    </div>
-    <div
-      style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:32px;padding:56px;position:relative;overflow:hidden;border-top:6px solid #F47C20;box-shadow:0 40px 80px rgba(0,0,0,0.3);">
-      <div
-        style="font-family:'iBrand',sans-serif;font-weight:900;font-size:80px;color:#F47C20;letter-spacing:-1px;line-height:1;margin-bottom:8px;">
-        f5</div>
-      <div
-        style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);font-weight:500;margin-bottom:40px;">
-        Aceleradora digital · f5estrategia.com.br</div>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <span
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-dim);">Tráfego
-          Pago</span>
-        <span
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-dim);">Meta
-          Ads</span>
-        <span
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-dim);">Google
-          Ads</span>
-        <span
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-dim);">Inteligência
-          de Dados</span>
-        <span
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-dim);">Funil
-          de Vendas</span>
-        <span
-          style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:8px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-dim);">Automação
-          com IA</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="background:var(--bg-dark);padding:0 24px 80px;box-sizing:border-box;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div
-      style="background:linear-gradient(135deg,#1A1208,#1E1208);border:1px solid rgba(244,124,32,0.3);border-top:4px solid #F47C20;border-radius:24px;padding:60px 80px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;box-sizing:border-box;box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-      <div style="flex:1 1 400px;min-width:0;">
-        <p
-          style="font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin:0 0 12px;">
-          Diagnóstico gratuito</p>
-        <p
-          style="font-family:'iBrand',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;line-height:1.2;margin:0;">
-          Mais de 300 empresas já sabem o que trava o crescimento delas. <span style="color:#F47C20;">E você?</span></p>
-      </div>
-      <a href="#form" class="btn-primary" style="flex:0 0 auto;min-width:320px;justify-content:center;">Fazer
-        diagnóstico grátis →</a>
-    </div>
-  </div>
-</div>
-
-<div style="background:#080808;padding:96px 24px;box-sizing:border-box;">
-  <div style="max-width:720px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:52px;">
-      <p
-        style="font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;color:#F47C20;letter-spacing:.12em;text-transform:uppercase;margin:0 0 16px;">
-        Perguntas frequentes</p>
-      <h2
-        style="font-family:'iBrand',sans-serif;font-weight:800;font-size:clamp(26px,4vw,40px);line-height:1.2;letter-spacing:-0.5px;color:#fff;margin:0;">
-        Ainda tem dúvidas?</h2>
-    </div>
-    <div id="faq-wrap">
-      <div style="border-bottom:1px solid #222;">
-        <button class="faq-toggle" onclick="f5ToggleFaq(this)" type="button"
-          style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;text-align:left;gap:16px;">
-          <span
-            style="font-family:'iBrand',sans-serif;font-weight:600;font-size:15px;color:#fff;line-height:1.4;">Preciso
-            pagar alguma coisa para fazer o diagnóstico?</span>
-          <span
-            style="width:28px;height:28px;border-radius:50%;background:#222;border:1px solid #2E2E2E;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#F47C20;font-size:20px;font-weight:300;transition:transform .2s;">+</span>
-        </button>
-        <div
-          style="display:none;padding:0 0 22px;font-family:'Poppins',sans-serif;font-size:14px;color:#BBBBB5;line-height:1.7;">
-          Não. O diagnóstico é 100% gratuito. Você responde as 6 perguntas, preenche nome e e-mail e recebe o resultado
-          imediatamente — sem nenhum custo.</div>
-      </div>
-      <div style="border-bottom:1px solid #222;">
-        <button class="faq-toggle" onclick="f5ToggleFaq(this)" type="button"
-          style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;text-align:left;gap:16px;">
-          <span style="font-family:'iBrand',sans-serif;font-weight:600;font-size:15px;color:#fff;line-height:1.4;">O que
-            acontece depois que eu faço o diagnóstico?</span>
-          <span
-            style="width:28px;height:28px;border-radius:50%;background:#222;border:1px solid #2E2E2E;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#F47C20;font-size:20px;font-weight:300;">+</span>
-        </button>
-        <div
-          style="display:none;padding:0 0 22px;font-family:'Poppins',sans-serif;font-size:14px;color:#BBBBB5;line-height:1.7;">
-          Você recebe o resultado com o gargalo principal e 3 ações prioritárias. Se o diagnóstico indicar que a f5 pode
-          ajudar, um especialista pode entrar em contato — mas não há pressão de venda.</div>
-      </div>
-      <div style="border-bottom:1px solid #222;">
-        <button class="faq-toggle" onclick="f5ToggleFaq(this)" type="button"
-          style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;text-align:left;gap:16px;">
-          <span style="font-family:'iBrand',sans-serif;font-weight:600;font-size:15px;color:#fff;line-height:1.4;">O
-            diagnóstico funciona para qualquer tipo de empresa?</span>
-          <span
-            style="width:28px;height:28px;border-radius:50%;background:#222;border:1px solid #2E2E2E;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#F47C20;font-size:20px;font-weight:300;">+</span>
-        </button>
-        <div
-          style="display:none;padding:0 0 22px;font-family:'Poppins',sans-serif;font-size:14px;color:#BBBBB5;line-height:1.7;">
-          Foi desenvolvido para empresas que faturam entre R$ 200K e R$ 1M+/mês — serviços B2B, indústria, consultoria e
-          varejo B2B.</div>
-      </div>
-      <div style="border-bottom:1px solid #222;">
-        <button class="faq-toggle" onclick="f5ToggleFaq(this)" type="button"
-          style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;text-align:left;gap:16px;">
-          <span style="font-family:'iBrand',sans-serif;font-weight:600;font-size:15px;color:#fff;line-height:1.4;">Meus
-            dados ficam seguros?</span>
-          <span
-            style="width:28px;height:28px;border-radius:50%;background:#222;border:1px solid #2E2E2E;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#F47C20;font-size:20px;font-weight:300;">+</span>
-        </button>
-        <div
-          style="display:none;padding:0 0 22px;font-family:'Poppins',sans-serif;font-size:14px;color:#BBBBB5;line-height:1.7;">
-          Sim. Seus dados são usados exclusivamente para envio do diagnóstico. Não compartilhamos com terceiros.</div>
-      </div>
-      <div style="border-bottom:1px solid #222;">
-        <button class="faq-toggle" onclick="f5ToggleFaq(this)" type="button"
-          style="width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;text-align:left;gap:16px;">
-          <span style="font-family:'iBrand',sans-serif;font-weight:600;font-size:15px;color:#fff;line-height:1.4;">O
-            diagnóstico é realmente personalizado?</span>
-          <span
-            style="width:28px;height:28px;border-radius:50%;background:#222;border:1px solid #2E2E2E;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#F47C20;font-size:20px;font-weight:300;">+</span>
-        </button>
-        <div
-          style="display:none;padding:0 0 22px;font-family:'Poppins',sans-serif;font-size:14px;color:#BBBBB5;line-height:1.7;">
-          Sim. O sistema analisa suas respostas e identifica o gargalo principal dentre 9 diagnósticos possíveis — cada
-          um com ações específicas para aquele problema.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="form"
-  style="background:var(--bg-dark);padding:var(--section-pad) 24px;position:relative;overflow:hidden;box-sizing:border-box;">
-  <div
-    style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 100% at 50% 50%,rgba(244,124,32,0.12) 0%,transparent 70%);pointer-events:none;">
-  </div>
-
-  <div id="st-form" style="max-width:850px;margin:0 auto;text-align:center;position:relative;z-index:1;">
-    <h2
-      style="font-family:'iBrand',sans-serif;font-weight:900;font-size:clamp(32px,6vw,64px);line-height:1.15;letter-spacing:-0.5px;color:#fff;margin:0 0 24px;">
-      Seu faturamento não está <span style="color:#F47C20;">travado por acaso.</span></h2>
-    <p
-      style="font-family:'Poppins',sans-serif;font-size:clamp(17px,2vw,22px);color:var(--text-dim);margin:0 0 60px;line-height:1.6;max-width:700px;margin-left:auto;margin-right:auto;">
-      Descubra agora o que está impedindo seu crescimento — e receba o plano prático para mudar isso.</p>
-
-    <div
-      style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:32px;padding:64px;max-width:600px;margin:0 auto;text-align:left;position:relative;border-top:6px solid #F47C20;box-shadow:0 60px 120px rgba(0,0,0,0.4);">
-      <h3
-        style="font-family:'iBrand',sans-serif;font-weight:800;font-size:26px;color:#fff;margin:0 0 8px;text-align:center;">
-        Fazer diagnóstico gratuito</h3>
-      <p
-        style="font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-muted);text-align:center;margin:0 0 48px;">
-        Resultado personalizado em menos de 3 minutos</p>
-
-      <div style="margin-bottom:24px;">
-        <label
-          style="display:block;font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;color:#F47C20;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;">Nome
-          completo</label>
-        <input id="lp-nome" type="text" placeholder="Seu nome completo"
-          style="width:100%;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;font-family:'Poppins',sans-serif;font-size:16px;color:#fff;outline:none;box-sizing:border-box;">
-      </div>
-
-      <div style="margin-bottom:24px;">
-        <label
-          style="display:block;font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;color:#F47C20;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;">E-mail
-          profissional</label>
-        <input id="lp-email" type="email" placeholder="seu@email.com.br"
-          style="width:100%;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;font-family:'Poppins',sans-serif;font-size:16px;color:#fff;outline:none;box-sizing:border-box;">
-      </div>
-
-      <div style="margin-bottom:24px;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
-          <label
-            style="font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;color:#F47C20;text-transform:uppercase;letter-spacing:.12em;margin:0;">WhatsApp</label>
-          <span
-            style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:2px 8px;font-family:'Poppins',sans-serif;font-size:11px;color:var(--text-muted);">Opcional</span>
+        <div class="f5-grid f5-reveal">
+            <div class="f5-card">
+                <div class="f5-ia-badge">Integrado com IA</div>
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>M4 · Prospecção e Leads</h3>
+                <p>Construção de ICP e cadências multicanais. Uso de IA para personalização de abordagens (Outbound 2.0).</p>
+            </div>
+            <div class="f5-card">
+                <i class="fa-solid fa-filter"></i>
+                <h3>M5 · Qualificação</h3>
+                <p>Aplicação rigorosa de BANT e MEDDIC. Pare de perder tempo com leads que não têm orçamento ou urgência.</p>
+            </div>
+            <div class="f5-card">
+                <div class="f5-ia-badge">Integrado com IA</div>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <h3>M6 · Proposta de Valor</h3>
+                <p>Pitch de vendas focado em ROI. Criação de decks de apresentação gerados e otimizados por inteligência artificial.</p>
+            </div>
+            <div class="f5-card">
+                <div class="f5-ia-badge">Integrado com IA</div>
+                <i class="fa-solid fa-handshake-slash"></i>
+                <h3>M7 · Negociação e Objeções</h3>
+                <p>Técnicas de ancoragem e manejo de objeções em tempo real com apoio de simuladores de IA.</p>
+            </div>
         </div>
-        <input id="lp-whats" type="tel" placeholder="(00) 00000-0000"
-          style="width:100%;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 20px;font-family:'Poppins',sans-serif;font-size:16px;color:#fff;outline:none;box-sizing:border-box;">
-      </div>
+    </section>
 
-      <div style="margin-bottom:40px;">
-        <label
-          style="display:block;font-family:'Poppins',sans-serif;font-size:12px;font-weight:700;color:#F47C20;text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px;">Faixa
-          de faturamento mensal</label>
-        <div id="lp-faixa-wrap" style="display:flex;flex-direction:column;gap:12px;">
-          <label
-            style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);">
-            <input type="radio" name="lp-faixa" value="ate_50k"
-              style="accent-color:#F47C20;width:20px;height:20px;flex-shrink:0;"> Até R$ 50 mil
-          </label>
-          <label
-            style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);">
-            <input type="radio" name="lp-faixa" value="50k_100k"
-              style="accent-color:#F47C20;width:20px;height:20px;flex-shrink:0;"> Entre R$ 50 mil e R$ 100 mil
-          </label>
-          <label
-            style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);">
-            <input type="radio" name="lp-faixa" value="100k_300k"
-              style="accent-color:#F47C20;width:20px;height:20px;flex-shrink:0;"> Entre R$ 100 mil e R$ 300 mil
-          </label>
-          <label
-            style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 20px;cursor:pointer;font-family:'Poppins',sans-serif;font-size:15px;color:var(--text-dim);">
-            <input type="radio" name="lp-faixa" value="acima_300k"
-              style="accent-color:#F47C20;width:20px;height:20px;flex-shrink:0;"> Acima de R$ 300 mil
-          </label>
+    <section class="f5-section" style="padding-top: 0 !important;">
+        <div class="f5-block-head f5-reveal">
+            <span>Bloco 03</span>
+            <h2>Gestão: O Painel de Controle</h2>
         </div>
-      </div>
-
-      <button id="btn-iniciar" class="btn-primary" style="width:100%;justify-content:center;padding:24px;">
-        Começar diagnóstico agora →
-      </button>
-
-      <div
-        style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:24px;font-family:'Poppins',sans-serif;font-size:13px;color:var(--text-muted);">
-        🔒 Seus dados estão seguros. Não fazemos spam.
-      </div>
-    </div>
-  </div>
-
-  <div id="st-quiz" style="display:none;max-width:600px;margin:0 auto;position:relative;z-index:1;">
-    <div
-      style="background:#181818;border:1px solid #2E2E2E;border-radius:20px;padding:40px;border-top:4px solid #F47C20;">
-      <div style="height:3px;background:#222;border-radius:2px;margin-bottom:24px;">
-        <div id="qfill" style="height:100%;background:#F47C20;border-radius:2px;transition:width .4s ease;width:0%;">
+        <div class="f5-gestao-flex f5-reveal">
+            <div style="flex: 1 1 350px !important; display: flex !important; flex-direction: column !important; gap: 20px !important;">
+                <div class="f5-card"><h3>M8 · Métricas e KPIs</h3><p>O que realmente importa: CAC, LTV, Win Rate e Ciclo Médio. Decisões baseadas em dados, não em "feeling".</p></div>
+                <div class="f5-card"><h3>M9 · Gestão de Time</h3><p>Perfil de contratação Hunter vs. Farmer. Como estruturar o onboarding para reduzir o tempo de ramp-up.</p></div>
+                <div class="f5-card"><div class="f5-ia-badge">Integrado com IA</div><h3>M10 · CRM e Ferramentas</h3><p>Configuração de automações e pipelines inteligentes. IA integrada para transcrição e resumo de chamadas.</p></div>
+            </div>
+            <div class="f5-kpi-panel">
+                <h4 style="color: #FF4D00 !important; font-size: 24px !important; text-transform: uppercase !important; font-weight: 900 !important; margin: 0 0 30px 0 !important;">KPIs de Impacto F5</h4>
+                <div class="big-num f5-count" data-target="+42%">0%</div>
+                <p>Aumento médio na taxa de conversão após a estruturação do processo.</p>
+                <div class="big-num f5-count" data-target="-30%">0%</div>
+                <p>Redução no tempo de fechamento de novos contratos (Sales Velocity).</p>
+            </div>
         </div>
-      </div>
-      <div id="qstep"
-        style="font-family:'Poppins',sans-serif;font-size:11px;color:#F47C20;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">
-      </div>
-      <div id="qq"
-        style="font-family:'iBrand',sans-serif;font-size:clamp(17px,3vw,21px);font-weight:700;color:#fff;line-height:1.35;margin-bottom:26px;">
-      </div>
-      <div id="qopts" style="display:flex;flex-direction:column;gap:10px;margin-bottom:26px;"></div>
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
-        <button id="qback"
-          style="background:transparent;border:1.5px solid #2E2E2E;color:#888;font-family:'Poppins',sans-serif;font-size:14px;padding:12px 20px;border-radius:8px;cursor:pointer;">←
-          Voltar</button>
-        <button id="qnext"
-          style="background:#F47C20;border:none;color:#fff;font-family:'iBrand',sans-serif;font-weight:700;font-size:14px;padding:12px 26px;border-radius:8px;cursor:pointer;opacity:0.3;pointer-events:none;box-shadow:none;">Próxima
-          →</button>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <div id="st-res" style="display:none;max-width:600px;margin:0 auto;text-align:left;position:relative;z-index:1;">
-  </div>
-</div>
+    <section class="f5-section" style="padding-top: 0 !important;">
+        <div class="f5-block-head f5-reveal">
+            <span>Bloco 04</span>
+            <h2>Crescimento: A Escala Exponencial</h2>
+        </div>
+        <div class="f5-grid f5-reveal">
+            <div class="f5-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>M11 · Metodologias Avançadas</h3>
+                <p>Deep dive em Challenger Sale, Value Selling e a arte de desafiar o status quo do cliente para vender alto valor.</p>
+            </div>
+            <div class="f5-card">
+                <i class="fa-solid fa-crown"></i>
+                <h3>M12 · Liderança Comercial</h3>
+                <p>Forecast avançado e coaching de vendas. Como construir um plano de carreira que retém os melhores talentos.</p>
+            </div>
+            <div class="f5-card" style="background-color: #001952 !important; border-color: #0047FF !important;">
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: #0047FF !important;"></i>
+                <h3 style="color: #ffffff !important;">M13 · IA Aplicada a Vendas</h3>
+                <p style="color: #cccccc !important;">O módulo definitivo: prospecção autônoma, análise de calls para feedback automático e forecast preditivo por IA.</p>
+            </div>
+        </div>
+        <div class="f5-bonus-bar f5-reveal">
+            <i class="fa-solid fa-gift"></i>
+            <div>
+                <strong style="color: #FF4D00 !important; text-transform: uppercase !important; font-size: 18px !important; display: block !important; margin-bottom: 5px !important;">BÔNUS: PSICOLOGIA B2B COMPLEXA</strong>
+                <span style="color: #A0A0A0 !important; font-size: 15px !important;">Gatilhos mentais enterprise, vieses cognitivos em comitês de compra e estratégias para lidar com múltiplos stakeholders.</span>
+            </div>
+        </div>
+    </section>
 
-<div
-  style="background:#0A0A0A;border-top:1px solid rgba(255,255,255,0.05);padding:60px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;box-sizing:border-box;">
-  <div style="font-family:'iBrand',sans-serif;font-weight:900;font-size:24px;color:#F47C20;letter-spacing:-1px;">f5
-    <span
-      style="font-family:'Poppins',sans-serif;font-weight:400;font-size:14px;color:var(--text-muted);margin-left:8px;text-transform:uppercase;letter-spacing:.1em;">Estratégia</span>
-  </div>
-  <div style="font-family:'Poppins',sans-serif;font-size:14px;color:var(--text-muted);font-weight:500;">© 2025 f5
-    Estratégia · Aceleradora Digital · f5estrategia.com.br</div>
+    <section class="f5-footer-cta f5-reveal" id="leads">
+        <img src="https://github.com/f5estrategia/TreinamentoDeVendas/blob/main/Logo%20f5.png?raw=true" alt="Logo F5" style="max-width: 150px !important; margin: 0 auto 35px !important; display: block !important;">
+        <h2 style="font-size: clamp(32px, 5vw, 60px) !important; font-weight: 900 !important; color: #ffffff !important; text-transform: uppercase !important; margin: 0 0 20px 0 !important; line-height: 1.1 !important;">PRONTO PARA IMPLEMENTAR<br><span style="color: #FF4D00 !important;">ESSA MÁQUINA?</span></h2>
+        <p style="color: #A0A0A0 !important; max-width: 700px !important; margin: 0 auto 50px !important; font-size: 18px !important;">Fale com um estrategista agora e receba um diagnóstico da sua operação comercial.</p>
+        <a href="#" class="f5-btn-main">Falar com um Estrategista</a>
+    </section>
+
 </div>
 
 <script>
-  // ── Dados do lead ──────────────────────────────────────────
-  var lNome = '', lEmail = '', lWhats = '', lFaixa = '';
-  var qRespostas = [], qAtual = 0, qScore = {};
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('f5-active');
+            }
+        });
+    }, { threshold: 0.1 });
 
-  var PERGUNTAS = [
-    {
-      slug: "canal_aquisicao", texto: "Como a maioria dos seus clientes novos chega até você?", categoria: "marketing", opcoes: [
-        { l: "A", t: "Quase todos vêm por indicação de outros clientes ou contatos", g: "indicacao", nota: 1 },
-        { l: "B", t: "Tenho anúncios rodando mas o resultado é imprevisível", g: "marketing", nota: 2 },
-        { l: "C", t: "Meu time de vendas prospecta ativamente", g: "vendas", nota: 3 },
-        { l: "D", t: "Misto de indicação, marketing e prospecção sem processo definido", g: "processo", nota: 2 }]
-    },
-    {
-      slug: "dependencia_dono", texto: "O que acontece com o faturamento se você sair de férias por 2 semanas?", categoria: "operacao", opcoes: [
-        { l: "A", t: "Provavelmente cai — dependo muito da minha presença para vender", g: "dono", nota: 1 },
-        { l: "B", t: "Fica estável mas eu fico ansioso sem acompanhar", g: "processo", nota: 2 },
-        { l: "C", t: "Continua normalmente, tenho time e processo rodando", g: "ok", nota: 4 },
-        { l: "D", t: "Nunca testei, não tenho coragem de me afastar", g: "dono", nota: 1 }]
-    },
-    {
-      slug: "perfil_cliente", texto: "Quando você pensa no cliente que mais te dá trabalho, qual é o problema principal?", categoria: "vendas", opcoes: [
-        { l: "A", t: "Pechincha muito e sempre pede desconto", g: "posicionamento", nota: 2 },
-        { l: "B", t: "Fecha mas cancela rápido ou exige muito suporte", g: "icp", nota: 2 },
-        { l: "C", t: "Paga bem e fica, mas são raros — preciso de mais desses", g: "marketing", nota: 3 },
-        { l: "D", t: "O maior problema é não ter clientes suficientes chegando", g: "indicacao", nota: 1 }]
-    },
-    {
-      slug: "maturidade_marketing", texto: "Como você saberia se seu marketing está funcionando ou não?", categoria: "marketing", opcoes: [
-        { l: "A", t: "Olho quantos clientes fechei — se aumentou, funcionou", g: "atribuicao", nota: 2 },
-        { l: "B", t: "Acompanho leads gerados e custo por lead", g: "atribuicao", nota: 3 },
-        { l: "C", t: "Tenho CAC e LTV por canal e acompanho mensalmente", g: "ok", nota: 4 },
-        { l: "D", t: "Sinceramente não tenho como medir com precisão", g: "processo", nota: 1 }]
-    },
-    {
-      slug: "causa_travamento", texto: "Qual é a principal razão pela qual você acha que o crescimento travou?", categoria: "estrategia", opcoes: [
-        { l: "A", t: "Não sei ao certo — é isso que me preocupa", g: "diagnostico", nota: 1 },
-        { l: "B", t: "Falta de clientes novos chegando de forma consistente", g: "indicacao", nota: 2 },
-        { l: "C", t: "Time de vendas que não converte bem", g: "vendas", nota: 2 },
-        { l: "D", t: "Margem caindo — fatura mais mas sobra menos", g: "posicionamento", nota: 2 }]
-    },
-    {
-      slug: "clareza_oferta", texto: "Você tem uma oferta clara — algo que um desconhecido entenderia em 10 segundos?", categoria: "estrategia", opcoes: [
-        { l: "A", t: "Sim, tenho proposta de valor definida e comunicada consistentemente", g: "ok", nota: 4 },
-        { l: "B", t: "Mais ou menos — explico bem pessoalmente mas não no digital", g: "posicionamento", nota: 2 },
-        { l: "C", t: "Não realmente — dependo da conversa para explicar o que faço", g: "posicionamento", nota: 1 },
-        { l: "D", t: "Nunca pensei nisso dessa forma", g: "posicionamento", nota: 1 }]
-    }
-  ];
-
-  var GARGALOS = {
-    indicacao: { titulo: "Dependência de indicação — você não tem sistema de aquisição", desc: "Seu negócio cresce quando alguém indica e para quando para de indicar. O problema não é o produto — é a ausência de um canal previsível de entrada de clientes novos.", acoes: ["Defina quem é seu cliente ideal com base nos últimos 5 clientes que deram certo — segmento, porte, dor principal. Sem isso, qualquer marketing vai atrair de tudo.", "Estruture pelo menos um canal de aquisição ativo além da indicação — tráfego pago, conteúdo ou outbound — com meta de leads por semana e métrica de custo por lead.", "Crie um processo simples de pedido de indicação para clientes satisfeitos — a maioria indica quando perguntada diretamente, mas nunca é perguntada."] },
-    posicionamento: { titulo: "Posicionamento fraco — o mercado não sabe por que te escolher", desc: "Quando o cliente não entende por que você é a escolha certa, ele usa o único critério disponível: preço. Você não tem problema de qualidade — tem problema de comunicação de valor.", acoes: ["Defina sua proposta única de valor em uma frase que um desconhecido entende em 10 segundos — o que você faz, para quem e qual resultado entrega.", "Revise todos os seus pontos de contato digitais para que a proposta de valor seja a primeira coisa que aparece — não o que você é, mas o que você resolve.", "Documente 3 cases com resultado específico (números, prazo, contexto) e use consistentemente — prova social com dado concreto reduz objeção de preço."] },
-    vendas: { titulo: "Processo comercial sem sistema — o time não converte", desc: "O problema raramente é o vendedor. Quase sempre é a ausência de processo: sem playbook, sem critério de qualificação, sem funil medido por etapa.", acoes: ["Mapeie as etapas do seu funil e coloque uma taxa de conversão real em cada uma. Só isso já vai mostrar onde está o maior gargalo.", "Defina critérios claros de qualificação: quais características um lead precisa ter para ir para o próximo passo?", "Implemente rituais semanais de pipeline review — 30 minutos por semana onde cada lead ativo é avaliado e o próximo passo é definido."] },
-    marketing: { titulo: "Marketing sem estratégia — você investe mas não sabe o que funciona", desc: "O problema quase nunca é o canal — é que o marketing foi ativado antes de ter oferta clara, público definido e destino estruturado.", acoes: ["Antes de qualquer campanha, defina: quem é o público específico, qual dor você ataca e qual é a única ação que você quer que o lead tome.", "Comece medindo o básico: quantos leads chegam por semana, de qual canal e quantos viram clientes.", "Teste uma campanha de 30 dias com orçamento fixo, público definido e oferta clara antes de concluir que marketing não funciona."] },
-    dono: { titulo: "Empresa dependente do dono — você não tem empresa, tem emprego caro", desc: "Quando o negócio depende da sua presença para vender e decidir, você não tem ativo — tem esforço. Isso tem teto e tem custo.", acoes: ["Identifique as 3 atividades que só você faz e que mais impactam o faturamento. Qual poderia ser delegada em 90 dias com o processo certo?", "Construa autoridade de marca da empresa — não só sua autoridade pessoal.", "Documente os processos que dependem de você no formato que outra pessoa pudesse seguir — começando pelos mais críticos para vendas."] },
-    icp: { titulo: "Cliente errado — você atrai quem não deveria atender", desc: "O problema não é faturamento baixo — é faturamento com custo alto. Cliente errado cancela rápido, exige muito e não indica bem.", acoes: ["Faça análise de lucratividade por cliente: pegue os últimos 10 e calcule o LTV de cada um. Os 3 mais rentáveis têm o quê em comum?", "Defina com precisão o perfil que você não quer mais atrair e revise sua comunicação para filtrar esse perfil na entrada.", "Crie um critério de qualificação mínimo para aceitar novos clientes — para proteger a margem e a energia do time."] },
-    processo: { titulo: "Ausência de processo — você opera no improviso", desc: "Resultado imprevisível quase sempre é consequência de processo inexistente. Sem processo, o que funciona depende de quem está fazendo.", acoes: ["Escolha UMA área crítica para estruturar primeiro: comercial, atendimento ou marketing. Documente como é feito hoje e como deveria ser.", "Implemente um ritual semanal de número: toda segunda-feira, 3 métricas principais da semana anterior são revisadas com o time.", "Defina o responsável por cada função crítica. Responsabilidade difusa é processo inexistente."] },
-    atribuicao: { titulo: "Falta de atribuição — você não sabe o que está funcionando", desc: "Você investe em marketing mas não sabe com precisão qual canal gera seu cliente mais rentável.", acoes: ["Implemente UTMs em todos os seus links de marketing para rastrear a origem de cada lead. É gratuito e leva 30 minutos.", "Crie uma planilha simples de origem do cliente: toda vez que um novo cliente fechar, registrar de onde veio.", "Cruze origem do cliente com LTV — o canal que gera mais leads pode não ser o que gera o cliente mais rentável."] },
-    diagnostico: { titulo: "Diagnóstico incompleto — você não sabe o gargalo", desc: "Não saber a causa do problema é o ponto de partida mais honesto. Tentar resolver sem diagnóstico claro é trocar de solução toda vez.", acoes: ["Mapeie as 3 etapas da jornada do cliente: como ele te encontra, como decide comprar e o que acontece depois. Onde o maior volume se perde?", "Converse com os últimos 3 clientes que não fecharam e pergunte diretamente: o que faltou para avançar?", "Peça para alguém de fora olhar sua presença digital e proposta comercial e dizer o que ficou confuso."] }
-  };
-
-  function f5CalcNotas() {
-    var acc = { marketing: [], vendas: [], operacao: [], estrategia: [] };
-    for (var i = 0; i < qRespostas.length; i++) {
-      if (!qRespostas[i]) continue;
-      var cat = PERGUNTAS[i].categoria;
-      if (acc[cat]) acc[cat].push(qRespostas[i].nota);
-    }
-    var res = {};
-    Object.keys(acc).forEach(function (k) {
-      var a = acc[k];
-      res[k] = a.length ? Math.round(a.reduce(function (s, v) { return s + v; }, 0) / a.length * 25) : 0;
-    });
-    return res;
-  }
-
-  function f5CalcGargalo() {
-    var top = null, max = 0;
-    Object.keys(qScore).forEach(function (k) { if (qScore[k] > max) { max = qScore[k]; top = k; } });
-    return top || 'diagnostico';
-  }
-
-  function f5RenderQ() {
-    var p = PERGUNTAS[qAtual];
-    var pct = Math.round((qAtual / PERGUNTAS.length) * 100);
-    var el = function (id) { return document.getElementById(id); };
-    if (el('qfill')) el('qfill').style.width = pct + '%';
-    if (el('qstep')) el('qstep').textContent = 'Pergunta ' + (qAtual + 1) + ' de ' + PERGUNTAS.length;
-    if (el('qq')) el('qq').textContent = p.texto;
-    var b = el('qback');
-    if (b) { b.style.opacity = qAtual === 0 ? '0.3' : '1'; b.style.pointerEvents = qAtual === 0 ? 'none' : 'all'; }
-    var n = el('qnext');
-    var temR = !!qRespostas[qAtual];
-    if (n) { n.style.opacity = temR ? '1' : '0.3'; n.style.pointerEvents = temR ? 'all' : 'none'; n.style.boxShadow = temR ? '0 4px 16px rgba(244,124,32,0.28)' : 'none'; }
-    var qo = el('qopts');
-    if (!qo) return;
-    qo.innerHTML = p.opcoes.map(function (o, i) {
-      var sel = qRespostas[qAtual] && qRespostas[qAtual].i === i;
-      return '<div data-f5idx="' + i + '" data-f5g="' + o.g + '" data-f5nota="' + o.nota + '" data-f5txt="' + o.t.replace(/"/g, "'") + '" style="background:' + (sel ? 'rgba(244,124,32,0.07)' : '#101010') + ';border:1.5px solid ' + (sel ? '#F47C20' : '#2E2E2E') + ';border-radius:10px;padding:15px 18px;cursor:pointer;display:flex;align-items:flex-start;gap:13px;margin-bottom:0;">' +
-        '<div style="min-width:27px;height:27px;border-radius:50%;background:' + (sel ? '#F47C20' : '#222') + ';display:flex;align-items:center;justify-content:center;font-family:\\\'iBrand\\\',sans-serif;font-size:11px;font-weight:700;color:' + (sel ? '#fff' : '#666') + ';flex-shrink:0;">' + o.l + '</div>' +
-          '<div style="font-family:\\\'Poppins\\\',sans-serif;font-size:14px;line-height:1.55;color:' + (sel ? '#fff' : '#BBBBB5') + ';padding-top:3px;">' + o.t + '</div></div>';
-    }).join('');
-    qo.querySelectorAll('[data-f5idx]').forEach(function (div) {
-      div.onclick = function () {
-        var i = parseInt(this.getAttribute('data-f5idx'));
-        qRespostas[qAtual] = { i: i, g: this.getAttribute('data-f5g'), nota: parseInt(this.getAttribute('data-f5nota')), texto: this.getAttribute('data-f5txt') };
-        f5RenderQ();
-      };
-    });
-  }
-
-  function f5IniciarQuiz() {
-    var n = document.getElementById('lp-nome');
-    var e = document.getElementById('lp-email');
-    var w = document.getElementById('lp-whats');
-    lNome = n ? n.value.trim() : '';
-    lEmail = e ? e.value.trim() : '';
-    lWhats = w ? w.value.trim() : '';
-    var faixaEl = document.querySelector('input[name="lp-faixa"]:checked');
-    lFaixa = faixaEl ? faixaEl.value : 'nao_informado';
-    if (!lNome || !lEmail) { alert('Preencha nome e e-mail para continuar.'); return; }
-
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'form_submit',
-      'event_category': 'conversion',
-      'event_label': 'inicio_quiz_diagnostico'
+    document.querySelectorAll('.f5-reveal').forEach(el => {
+        observer.observe(el);
     });
 
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
+    // Partículas da Hero
+    const hero = document.querySelector('.f5-hero');
+    if (hero) {
+        for(let i = 0; i < 40; i++) {
+            const p = document.createElement('div');
+            p.classList.add('f5-particle');
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            p.style.animationDelay = (Math.random() * 5) + 's';
+            hero.appendChild(p);
+        }
     }
 
-    qAtual = 0; qRespostas = []; qScore = {};
-    var sf = document.getElementById('st-form');
-    var sq = document.getElementById('st-quiz');
-    if (sf) sf.style.display = 'none';
-    if (sq) { sq.style.display = 'block'; sq.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    f5RenderQ();
-  }
+    const numObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.counted) {
+                entry.target.dataset.counted = true;
+                const targetStr = entry.target.dataset.target;
+                const isNegative = targetStr.includes('-');
+                const suffix = targetStr.replace(/[0-9\-+]/g, '');
+                const targetNum = parseInt(targetStr.replace(/[^0-9]/g, ''));
+                
+                let current = 0;
+                const duration = 2000;
+                const stepTime = Math.abs(Math.floor(duration / targetNum));
+                
+                const timer = setInterval(() => {
+                    current += 1;
+                    entry.target.innerText = (isNegative ? '-' : '+') + current + suffix;
+                    if (current >= targetNum) {
+                        clearInterval(timer);
+                        entry.target.innerText = targetStr;
+                    }
+                }, stepTime);
+            }
+        });
+    }, { threshold: 0.5 });
 
-  function f5Avancar() {
-    if (!qRespostas[qAtual]) return;
-    var g = qRespostas[qAtual].g;
-    if (g !== 'ok') qScore[g] = (qScore[g] || 0) + 1;
-    qAtual++;
-    if (qAtual >= PERGUNTAS.length) f5GerarResultado();
-    else f5RenderQ();
-  }
-
-  function f5Voltar() {
-    if (qAtual === 0) return;
-    qAtual--;
-    f5RenderQ();
-  }
-
-  function f5Enviar(payload) {
-    ['https://hook.us1.make.com/jba0gnr770fe4bil648v5xpf74hcfhps',
-      'https://hook.us1.make.com/4871cqg432xae4q3diu15jguplff6v1f'].forEach(function (url) {
-        fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-          .catch(function (e) { console.warn('Webhook erro:', e); });
-      });
-  }
-
-  function f5GerarResultado() {
-    var chave = f5CalcGargalo();
-    var g = GARGALOS[chave];
-    var notas = f5CalcNotas();
-    var p = new URLSearchParams(window.location.search);
-    var hoje = new Date();
-    var data = hoje.getFullYear() + '-' + String(hoje.getMonth() + 1).padStart(2, '0') + '-' + String(hoje.getDate()).padStart(2, '0');
-
-    var camposRespostas = {};
-    for (var i = 0; i < PERGUNTAS.length; i++) {
-      var sl = PERGUNTAS[i].slug;
-      var r = qRespostas[i];
-      camposRespostas[sl + '_pergunta'] = PERGUNTAS[i].texto;
-      camposRespostas[sl + '_letra'] = r ? PERGUNTAS[i].opcoes[r.i].l : null;
-      camposRespostas[sl + '_resposta'] = r ? r.texto : null;
-      camposRespostas[sl + '_gargalo'] = r ? r.g : null;
-      camposRespostas[sl + '_nota'] = r ? r.nota : null;
-    }
-
-    f5Enviar(Object.assign({
-      nome: lNome, email: lEmail, whatsapp: lWhats, faixa_faturamento: lFaixa,
-      diagnostico_chave: chave, diagnostico_titulo: g.titulo, diagnostico_descricao: g.desc,
-      acao_1: g.acoes[0], acao_2: g.acoes[1], acao_3: g.acoes[2],
-      nota_marketing: notas.marketing, nota_vendas: notas.vendas,
-      nota_operacao: notas.operacao, nota_estrategia: notas.estrategia,
-      data_conversao: data,
-      utm_source: p.get('utm_source') || '', utm_medium: p.get('utm_medium') || '',
-      utm_content: p.get('utm_content') || '', utm_campaign: p.get('utm_campaign') || '',
-      utm_term: p.get('utm_term') || '',
-      isca: 'lp_quiz_faturamento_travado', timestamp: new Date().toISOString()
-    }, camposRespostas));
-
-    var sq = document.getElementById('st-quiz');
-    if (sq) sq.style.display = 'none';
-
-    function baraNota(label, val) {
-      var cor = val >= 75 ? '#0D6B4F' : val >= 50 ? '#E6A817' : '#C0392B';
-      return '<div style="margin-bottom:10px;"><div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span style="font-family:\\\'Poppins\\\',sans-serif;font-size:12px;color:#BBBBB5;">' + label + '</span><span style="font-family:\\\'iBrand\\\',sans-serif;font-size:12px;font-weight:700;color:' + cor + ';">' + val + '/100</span></div><div style="height:6px;background:#222;border-radius:3px;overflow:hidden;"><div style="height:100%;width:' + val + '%;background:' + cor + ';border-radius:3px;"></div></div></div>';
-    }
-
-    var primeiroNome = lNome.split(' ')[0];
-    var acoes = g.acoes.map(function (a, i) {
-      return '<div style="display:flex;gap:13px;padding:14px 0;border-bottom:1px solid #222;"><div style="min-width:28px;height:28px;background:#F47C20;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:\\\'iBrand\\\',sans-serif;font-weight:800;font-size:12px;color:#fff;flex-shrink:0;">' + (i + 1) + '</div><div style="font-family:\\\'Poppins\\\',sans-serif;font-size:14px;line-height:1.65;color:#BBBBB5;padding-top:3px;">' + a + '</div></div>';
-    }).join('');
-
-    var sr = document.getElementById('st-res');
-    if (sr) {
-      sr.innerHTML =
-        '<div style="text-align:center;margin-bottom:24px;"><p style="font-family:\\\'Poppins\\\',sans-serif;font-size:11px;color:#F47C20;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin:0;">' + primeiroNome + ', aqui está o seu diagnóstico</p></div>' +
-          '<div style="background:#181818;border:1.5 solid rgba(244,124,32,0.3);border-radius:14px;padding:26px;margin-bottom:22px;border-top:3px solid #F47C20;">' +
-          '<p style="font-family:\\\'Poppins\\\',sans-serif;font-size:11px;font-weight:600;color:#F47C20;text-transform:uppercase;letter-spacing:.1em;margin:0 0 10px;">Gargalo principal identificado</p>' +
-            '<h3 style="font-family:\\\'iBrand\\\',sans-serif;font-size:clamp(17px,3vw,22px);font-weight:800;color:#fff;margin:0 0 10px;line-height:1.25;">' + g.titulo + '</h3>' +
-              '<p style="font-family:\\\'Poppins\\\',sans-serif;font-size:14px;color:#BBBBB5;line-height:1.72;margin:0;">' + g.desc + '</p>' +
-                '</div>' +
-                '<div style="background:#181818;border:1px solid #2E2E2E;border-radius:14px;padding:22px;margin-bottom:22px;">' +
-                '<p style="font-family:\\\'iBrand\\\',sans-serif;font-size:13px;font-weight:700;color:#fff;margin:0 0 16px;">Diagnóstico por área</p>' +
-                  baraNota('Marketing & Aquisição', notas.marketing) +
-                  baraNota('Vendas & Conversão', notas.vendas) +
-                  baraNota('Operação & Processo', notas.operacao) +
-                  baraNota('Estratégia & Posicionamento', notas.estrategia) +
-                  '</div>' +
-                  '<p style="font-family:\\\'iBrand\\\',sans-serif;font-size:15px;font-weight:700;color:#fff;margin:0 0 12px;">3 ações prioritárias para você</p>' + acoes +
-                    '<div style="background:#F47C20;border-radius:12px;padding:22px;text-align:center;margin-top:22px;">' +
-                    '<p style="font-family:\\\'Poppins\\\',sans-serif;font-size:14px;color:rgba(255,255,255,0.9);margin:0 0 14px;line-height:1.55;">Quer um plano de ação personalizado e uma análise mais profunda do seu negócio?</p>' +
-                      '<button id="btn-cta-especialista" style="background:#fff;color:#C4610E;font-family:\\\'iBrand\\\',sans-serif;font-weight:800;font-size:14px;padding:12px 26px;border:none;border-radius:8px;cursor:pointer;">Falar com um especialista da f5 →</button>' +
-                        '</div>';
-      sr.style.display = 'block';
-      sr.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      var btnEsp = document.getElementById('btn-cta-especialista');
-      if (btnEsp) btnEsp.onclick = function () { window.open('https://f5estrategia.com.br', '_blank'); };
-    }
-  }
-
-  function f5ToggleFaq(btn) {
-    var body = btn.nextElementSibling;
-    var icon = btn.querySelector('span:last-child');
-    var isOpen = body && body.style.display === 'block';
-    document.querySelectorAll('.faq-toggle').forEach(function (b) {
-      if (b.nextElementSibling) b.nextElementSibling.style.display = 'none';
-      var ic = b.querySelector('span:last-child');
-      if (ic) ic.textContent = '+';
+    document.querySelectorAll('.f5-count').forEach(el => {
+        numObserver.observe(el);
     });
-    if (!isOpen && body) { body.style.display = 'block'; if (icon) icon.textContent = '×'; }
-  }
-
-  function f5Bind() {
-    var btnI = document.getElementById('btn-iniciar');
-    if (btnI && !btnI.getAttribute('data-f5bound')) {
-      btnI.setAttribute('data-f5bound', '1');
-      btnI.onclick = f5IniciarQuiz;
-      btnI.ontouchend = function (e) { e.preventDefault(); f5IniciarQuiz(); };
-    }
-    var btnN = document.getElementById('qnext');
-    if (btnN && !btnN.getAttribute('data-f5bound')) {
-      btnN.setAttribute('data-f5bound', '1');
-      btnN.onclick = f5Avancar;
-    }
-    var btnB = document.getElementById('qback');
-    if (btnB && !btnB.getAttribute('data-f5bound')) {
-      btnB.setAttribute('data-f5bound', '1');
-      btnB.onclick = f5Voltar;
-    }
-    document.querySelectorAll('.faq-toggle').forEach(function (btn) {
-      if (!btn.getAttribute('data-f5bound')) {
-        btn.setAttribute('data-f5bound', '1');
-        btn.onclick = function () { f5ToggleFaq(this); };
-      }
-    });
-  }
-
-  f5Bind();
-  setTimeout(f5Bind, 100);
-  setTimeout(f5Bind, 500);
-  setTimeout(f5Bind, 1000);
-  setTimeout(f5Bind, 2000);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', f5Bind);
-  }
-  window.addEventListener('load', f5Bind);
+});
 </script>
